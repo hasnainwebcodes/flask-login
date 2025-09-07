@@ -1,0 +1,18 @@
+<html>
+<header>
+<title>Authentication</title>
+</header>
+<body>
+<form method="POST" action="/login">
+<h1>Authentication Form</h1><br><br>
+{{ form.hidden_tag() }}<br>
+{{ form.username.label }}<br>
+{{ form.username }}<br>
+{{ form.password.label }}<br>
+{{ form.password }}<br><br>
+{{ form.submit }}
+</form>
+<h5>Don't have an account</h5>
+<a href="{{url_for('register')}}"><button>Sign up</button></a>
+</body>
+</html>
