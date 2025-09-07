@@ -36,9 +36,6 @@ class LoginForm(FlaskForm):
     username= StringField(validators=[InputRequired(), Length(min=4,max=20)], label= "Username")
     password= PasswordField(validators=[InputRequired(), Length(min=8,max=40)], label= "password")
     submit= SubmitField("Login")
-
-with app.app_context():
-    db.create_all()
     
 @app.route("/")
 def home():
