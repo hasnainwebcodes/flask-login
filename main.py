@@ -52,6 +52,16 @@ def login():
                 return redirect("/dashboard")
 
     return render_template("home.html",form=form)
+@app.route("/logout", methods=['GET', 'POST'])
+@login_required
+def logout():
+    if request.method == 'POST':
+        logout_user()
+        return redirect("/login")
+    else:
+        return render_template("logout.html")
+    
+
 @app.route("/register",methods=['GET','POST'])
 def register():
     form= RegisterForm()
